@@ -66,7 +66,7 @@
 					el.checked = !el.checked;
 				}
 
-				new magicSelection( selList, 'input[type="checkbox"]', {
+				new magicSelection( selList.querySelectorAll( 'li > input[type="checkbox"]' ), {
 					onSelection : function( el ) { checkUncheck( el ); },
 					onClick : function( el ) {
 						el.parentNode.className = el.checked ? 'selected' : '';

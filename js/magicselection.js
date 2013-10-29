@@ -37,10 +37,9 @@
 		return check;
 	}
 
-	function magicSelection( el, workon, options ) {
+	function magicSelection( elems, options ) {
 		if( mobilecheck() ) { return false; }
-		this.el = el;
-		this.workon = workon;
+		this.items = [].slice.call( elems );
 		this.options = extend( this.defaults, options );
 		this._init();
 	}
@@ -55,7 +54,6 @@
 	};
 
 	magicSelection.prototype._init = function() {
-		this.items = [].slice.call( this.el.querySelectorAll( this.workon ) );
 		this._initEvents();
 	};
 
